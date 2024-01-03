@@ -22,7 +22,10 @@ def fetch_words():
 
 
 def write_down(words):
-    for item in words:
+    for idx, item in enumerate(words):
+        # 途中から再開する場合はここを変更する
+        # restart_idx = 515
+        # word = words[idx + restart_idx]["English"]
         word = item["English"]
         definition = fetch_definition(word)
         with open("definitions.txt", "a") as file:
